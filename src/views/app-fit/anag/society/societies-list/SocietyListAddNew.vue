@@ -1,0 +1,434 @@
+<template>
+  <b-sidebar
+    id="add-new-society-sidebar"
+    :visible="isAddNewSocietySidebarActive"
+    bg-variant="white"
+    sidebar-class="sidebar-lg"
+    shadow
+    backdrop
+    no-header
+    right
+    @hidden="resetForm"
+    @change="(val) => $emit('update:is-add-new-society-sidebar-active', val)"
+  >
+    <template #default="{ hide }">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center content-sidebar-header px-2 py-1">
+        <h5 class="mb-0">
+          Aggiungi Nuova Società
+        </h5>
+
+        <feather-icon
+          class="ml-1 cursor-pointer"
+          icon="XIcon"
+          size="16"
+          @click="hide"
+        />
+
+      </div>
+
+      <!-- BODY -->
+      <validation-observer
+        #default="{ handleSubmit }"
+        ref="refFormObserver"
+      >
+        <!-- Form -->
+        <b-form
+          class="p-2"
+          @submit.prevent="handleSubmit(onSubmit)"
+          @reset.prevent="resetForm"
+        >
+
+          <!-- Society Name -->
+          <validation-provider
+            #default="validationContext"
+            name="Nome Società"
+            rules="required"
+          >
+            <b-form-group
+              label="Nome Società"
+              label-for="society-name"
+            >
+              <b-form-input
+                id="society-name"
+                v-model="itemData.societyName"
+                autofocus
+                :state="getValidationState(validationContext)"
+                trim
+                placeholder="Nome Società..."
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Fiscal Code -->
+          <validation-provider
+            #default="validationContext"
+            name="Codice Fiscale"
+            rules="required|alpha-num"
+          >
+            <b-form-group
+              label="Codice Fiscale"
+              label-for="fiscal-code"
+            >
+              <b-form-input
+                id="fiscal-code"
+                v-model="itemData.fiscalCode"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Pec -->
+          <validation-provider
+            #default="validationContext"
+            name="Pec"
+            rules="required|email"
+          >
+            <b-form-group
+              label="Pec"
+              label-for="pec"
+            >
+              <b-form-input
+                id="pec"
+                v-model="itemData.pec"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- LocalityLegal -->
+          <validation-provider
+            #default="validationContext"
+            name="Località"
+            rules="required"
+          >
+            <b-form-group
+              label="Località"
+              label-for="locality-legal"
+            >
+              <b-form-input
+                id="locality-legal"
+                v-model="itemData.localityLegal"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- ProvinceLegal -->
+          <validation-provider
+            #default="validationContext"
+            name="Provincia"
+            rules="required"
+          >
+            <b-form-group
+              label="Provincia"
+              label-for="province-legal"
+              :state="getValidationState(validationContext)"
+            >
+              <v-select
+                v-model="itemData.provinceLegal"
+                :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+                :options="provinces"
+                :clearable="false"
+                input-id="province-legal"
+              />
+              <b-form-invalid-feedback :state="getValidationState(validationContext)">
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- address Legal -->
+          <validation-provider
+            #default="validationContext"
+            name="Indirizzo Sede Legale"
+            rules="required"
+          >
+            <b-form-group
+              label="Indirizzo Sede Legale"
+              label-for="address-Legal"
+            >
+              <b-form-input
+                id="address-Legal"
+                v-model="itemData.addressLegal"
+                autofocus
+                :state="getValidationState(validationContext)"
+                trim
+                placeholder="Indirizzo..."
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Cap Legal -->
+          <validation-provider
+            #default="validationContext"
+            name="Cap"
+            rules="required|alpha-num"
+          >
+            <b-form-group
+              label="Cap"
+              label-for="cap-legal"
+            >
+              <b-form-input
+                id="cap-legal"
+                v-model="itemData.capLegal"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Telephone Legal1 -->
+          <validation-provider
+            #default="validationContext"
+            name="Telefono"
+            rules="required|alpha-num"
+          >
+            <b-form-group
+              label="Telefono"
+              label-for="telephone-legal1"
+            >
+              <b-form-input
+                id="telephone-legal1"
+                v-model="itemData.telephoneLegal1"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- IBAN -->
+          <validation-provider
+            #default="validationContext"
+            name="IBAN"
+            rules="required|alpha-num"
+          >
+            <b-form-group
+              label="IBAN"
+              label-for="iban"
+            >
+              <b-form-input
+                id="iban"
+                v-model="itemData.iBAN"
+                :state="getValidationState(validationContext)"
+                trim
+              />
+
+              <b-form-invalid-feedback>
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Form Actions -->
+          <div class="d-flex mt-2">
+            <b-button
+              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+              variant="primary"
+              class="mr-2"
+              type="submit"
+            >
+              Add
+            </b-button>
+            <b-button
+              v-ripple.400="'rgba(186, 191, 199, 0.15)'"
+              type="button"
+              variant="outline-secondary"
+              @click="hide"
+            >
+              Cancel
+            </b-button>
+          </div>
+
+        </b-form>
+
+      </validation-observer>
+    </template>
+  </b-sidebar>
+</template>
+
+<script>
+import {
+  BSidebar, BForm, BFormGroup, BFormInput, BFormInvalidFeedback, BButton,
+} from 'bootstrap-vue'
+
+import { ValidationProvider, ValidationObserver } from 'vee-validate'
+import formValidation from '@core/comp-functions/forms/form-validation'
+import Ripple from 'vue-ripple-directive'
+import { required, alphaNum, email } from '@validations'
+
+import { ref } from '@vue/composition-api'
+import vSelect from 'vue-select'
+// import countries from '@/@fake-db/data/other/countries'
+import provinces from '@/@fake-db/data/other/provinces'
+import store from '@/store'
+
+export default {
+  components: {
+    BSidebar,
+    BForm,
+    BFormGroup,
+    BFormInput,
+    BButton,
+    vSelect,
+
+    // Form Validation
+    ValidationProvider,
+    ValidationObserver,
+    BFormInvalidFeedback,
+  },
+  directives: {
+    Ripple,
+  },
+  model: {
+    prop: 'isAddNewSocietySidebarActive',
+    event: 'update:is-add-new-society-sidebar-active',
+  },
+  props: {
+    isAddNewSocietySidebarActive: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      required,
+      alphaNum,
+      email,
+      // countries,
+      provinces,
+    }
+  },
+  setup(props, { emit }) {
+    const blankItemData = {
+      societyName: '',
+      fiscalCode: '',
+      pec: '',
+      localityLegal: '',
+      provinceLegal: '',
+      addressLegal: '',
+      capLegal: '',
+      telephoneLegal1: '',
+      iBAN: '',
+    }
+
+    const itemData = ref(JSON.parse(JSON.stringify(blankItemData)))
+    const resetItemData = () => {
+      itemData.value = JSON.parse(JSON.stringify(blankItemData))
+    }
+
+    const onSubmit = () => {
+      store.dispatch('anag-society/addSociety', itemData.value)
+        .then(() => {
+          emit('refetch-data')
+          emit('update:is-add-new-society-sidebar-active', false)
+        })
+    }
+
+    const {
+      refFormObserver,
+      getValidationState,
+      resetForm,
+    } = formValidation(resetItemData)
+
+    return {
+      itemData,
+      onSubmit,
+
+      refFormObserver,
+      getValidationState,
+      resetForm,
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+@import '@core/scss/vue/libs/vue-select.scss';
+
+#add-new-society-sidebar {
+  .vs__dropdown-menu {
+    max-height: 200px !important;
+  }
+}
+</style>
+
+          <!-- User Role -->
+          <!-- <validation-provider
+            #default="validationContext"
+            name="User Role"
+            rules="required"
+          >
+            <b-form-group
+              label="User Role"
+              label-for="user-role"
+              :state="getValidationState(validationContext)"
+            >
+              <v-select
+                v-model="itemData.role"
+                :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+                :options="roleOptions"
+                :reduce="val => val.value"
+                :clearable="false"
+                input-id="user-role"
+              />
+              <b-form-invalid-feedback :state="getValidationState(validationContext)">
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider> -->
+
+          <!-- Plan -->
+          <!-- <validation-provider
+            #default="validationContext"
+            name="Plan"
+            rules="required"
+          >
+            <b-form-group
+              label="Plan"
+              label-for="plan"
+              :state="getValidationState(validationContext)"
+            >
+              <v-select
+                v-model="itemData.currentPlan"
+                :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+                :options="planOptions"
+                :reduce="val => val.value"
+                :clearable="false"
+                input-id="plan"
+              />
+              <b-form-invalid-feedback :state="getValidationState(validationContext)">
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider> -->

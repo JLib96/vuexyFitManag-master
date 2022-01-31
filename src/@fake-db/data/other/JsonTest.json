@@ -1,0 +1,550 @@
+[
+    {
+        "RegionId": 1,
+        "Region": "Abruzzo",
+        "PROVINCES": [
+            {
+                "id": 1,
+                "Province": "AQ"
+            },
+            {
+                "id": 2,
+                "Province": "CH"
+            },
+            {
+                "id": 3,
+                "Province": "PE"
+            },
+            {
+                "id": 4,
+                "Province": "TE"
+            }
+        ]
+    },
+    {
+        "RegionId": 2,
+        "Region": "Basilicata",
+        "PROVINCES": [
+            {
+                "id": 5,
+                "Province": "MT"
+            },
+            {
+                "id": 6,
+                "Province": "PZ"
+            }
+        ]
+    },
+    {
+        "RegionId": 3,
+        "Region": "Calabria",
+        "PROVINCES": [
+            {
+                "id": 7,
+                "Province": "CS"
+            },
+            {
+                "id": 8,
+                "Province": "CZ"
+            },
+            {
+                "id": 9,
+                "Province": "KR"
+            },
+            {
+                "id": 10,
+                "Province": "RC"
+            },
+            {
+                "id": 11,
+                "Province": "VV"
+            }
+        ]
+    },
+    {
+        "RegionId": 4,
+        "Region": "Campania",
+        "PROVINCES": [
+            {
+                "id": 12,
+                "Province": "AV"
+            },
+            {
+                "id": 13,
+                "Province": "BN"
+            },
+            {
+                "id": 14,
+                "Province": "CE"
+            },
+            {
+                "id": 15,
+                "Province": "NA"
+            },
+            {
+                "id": 16,
+                "Province": "SA"
+            }
+        ]
+    },
+    {
+        "RegionId": 5,
+        "Region": "Emilia-Romagna",
+        "PROVINCES": [
+            {
+                "id": 17,
+                "Province": "BO"
+            },
+            {
+                "id": 18,
+                "Province": "FC"
+            },
+            {
+                "id": 19,
+                "Province": "FE"
+            },
+            {
+                "id": 20,
+                "Province": "MO"
+            },
+            {
+                "id": 21,
+                "Province": "PC"
+            },
+            {
+                "id": 22,
+                "Province": "PR"
+            },
+            {
+                "id": 23,
+                "Province": "RA"
+            },
+            {
+                "id": 24,
+                "Province": "RE"
+            },
+            {
+                "id": 25,
+                "Province": "RN"
+            }
+        ]
+    },
+    {
+        "RegionId": 6,
+        "Region": "Friuli-Venezia Giulia",
+        "PROVINCES": [
+            {
+                "id": 26,
+                "Province": "GO"
+            },
+            {
+                "id": 27,
+                "Province": "PN"
+            },
+            {
+                "id": 28,
+                "Province": "TS"
+            },
+            {
+                "id": 29,
+                "Province": "UD"
+            }
+        ]
+    },
+    {
+        "RegionId": 7,
+        "Region": "Lazio",
+        "PROVINCES": [
+            {
+                "id": 30,
+                "Province": "FR"
+            },
+            {
+                "id": 31,
+                "Province": "LT"
+            },
+            {
+                "id": 32,
+                "Province": "RI"
+            },
+            {
+                "id": 33,
+                "Province": "RM"
+            },
+            {
+                "id": 34,
+                "Province": "VT"
+            }
+        ]
+    },
+    {
+        "RegionId": 8,
+        "Region": "Liguria",
+        "PROVINCES": [
+            {
+                "id": 35,
+                "Province": "GE"
+            },
+            {
+                "id": 36,
+                "Province": "IM"
+            },
+            {
+                "id": 37,
+                "Province": "SP"
+            },
+            {
+                "id": 38,
+                "Province": "SV"
+            }
+        ]
+    },
+    {
+        "RegionId": 9,
+        "Region": "Lombardia",
+        "PROVINCES": [
+            {
+                "id": 39,
+                "Province": "BG"
+            },
+            {
+                "id": 40,
+                "Province": "BS"
+            },
+            {
+                "id": 41,
+                "Province": "CO"
+            },
+            {
+                "id": 42,
+                "Province": "CR"
+            },
+            {
+                "id": 43,
+                "Province": "LC"
+            },
+            {
+                "id": 44,
+                "Province": "LO"
+            },
+            {
+                "id": 45,
+                "Province": "MB"
+            },
+            {
+                "id": 46,
+                "Province": "MI"
+            },
+            {
+                "id": 47,
+                "Province": "MN"
+            },
+            {
+                "id": 48,
+                "Province": "PV"
+            },
+            {
+                "id": 49,
+                "Province": "SO"
+            },
+            {
+                "id": 50,
+                "Province": "VA"
+            }
+        ]
+    },
+    {
+        "RegionId": 10,
+        "Region": "Marche",
+        "PROVINCES": [
+            {
+                "id": 51,
+                "Province": "AN"
+            },
+            {
+                "id": 52,
+                "Province": "AP"
+            },
+            {
+                "id": 53,
+                "Province": "FM"
+            },
+            {
+                "id": 54,
+                "Province": "MC"
+            },
+            {
+                "id": 55,
+                "Province": "PU"
+            }
+        ]
+    },
+    {
+        "RegionId": 11,
+        "Region": "Molise",
+        "PROVINCES": [
+            {
+                "id": 56,
+                "Province": "CB"
+            },
+            {
+                "id": 57,
+                "Province": "IS"
+            }
+        ]
+    },
+    {
+        "RegionId": 12,
+        "Region": "Piemonte",
+        "PROVINCES": [
+            {
+                "id": 58,
+                "Province": "AL"
+            },
+            {
+                "id": 59,
+                "Province": "AT"
+            },
+            {
+                "id": 60,
+                "Province": "BI"
+            },
+            {
+                "id": 61,
+                "Province": "CN"
+            },
+            {
+                "id": 62,
+                "Province": "NO"
+            },
+            {
+                "id": 63,
+                "Province": "TO"
+            },
+            {
+                "id": 64,
+                "Province": "VB"
+            },
+            {
+                "id": 65,
+                "Province": "VC"
+            }
+        ]
+    },
+    {
+        "RegionId": 13,
+        "Region": "Puglia",
+        "PROVINCES": [
+            {
+                "id": 66,
+                "Province": "BA"
+            },
+            {
+                "id": 67,
+                "Province": "BR"
+            },
+            {
+                "id": 68,
+                "Province": "BT"
+            },
+            {
+                "id": 69,
+                "Province": "FG"
+            },
+            {
+                "id": 70,
+                "Province": "LE"
+            },
+            {
+                "id": 71,
+                "Province": "TA"
+            }
+        ]
+    },
+    {
+        "RegionId": 14,
+        "Region": "Sardegna",
+        "PROVINCES": [
+            {
+                "id": 72,
+                "Province": "CA"
+            },
+            {
+                "id": 73,
+                "Province": "NU"
+            },
+            {
+                "id": 74,
+                "Province": "OR"
+            },
+            {
+                "id": 75,
+                "Province": "SS"
+            },
+            {
+                "id": 76,
+                "Province": "SU"
+            }
+        ]
+    },
+    {
+        "RegionId": 15,
+        "Region": "Sicilia",
+        "PROVINCES": [
+            {
+                "id": 77,
+                "Province": "AG"
+            },
+            {
+                "id": 78,
+                "Province": "CL"
+            },
+            {
+                "id": 79,
+                "Province": "CT"
+            },
+            {
+                "id": 80,
+                "Province": "EN"
+            },
+            {
+                "id": 81,
+                "Province": "ME"
+            },
+            {
+                "id": 82,
+                "Province": "PA"
+            },
+            {
+                "id": 83,
+                "Province": "RG"
+            },
+            {
+                "id": 84,
+                "Province": "SR"
+            },
+            {
+                "id": 85,
+                "Province": "TP"
+            }
+        ]
+    },
+    {
+        "RegionId": 16,
+        "Region": "Toscana",
+        "PROVINCES": [
+            {
+                "id": 86,
+                "Province": "AR"
+            },
+            {
+                "id": 87,
+                "Province": "FI"
+            },
+            {
+                "id": 88,
+                "Province": "GR"
+            },
+            {
+                "id": 89,
+                "Province": "LI"
+            },
+            {
+                "id": 90,
+                "Province": "LU"
+            },
+            {
+                "id": 91,
+                "Province": "MS"
+            },
+            {
+                "id": 92,
+                "Province": "PI"
+            },
+            {
+                "id": 93,
+                "Province": "PO"
+            },
+            {
+                "id": 94,
+                "Province": "PT"
+            },
+            {
+                "id": 95,
+                "Province": "SI"
+            }
+        ]
+    },
+    {
+        "RegionId": 17,
+        "Region": "Trentino-Alto Adige",
+        "PROVINCES": [
+            {
+                "id": 96,
+                "Province": "BZ"
+            },
+            {
+                "id": 97,
+                "Province": "TN"
+            }
+        ]
+    },
+    {
+        "RegionId": 18,
+        "Region": "Umbria",
+        "PROVINCES": [
+            {
+                "id": 98,
+                "Province": "PG"
+            },
+            {
+                "id": 99,
+                "Province": "TR"
+            }
+        ]
+    },
+    {
+        "RegionId": 19,
+        "Region": "Valle d''Aosta",
+        "PROVINCES": [
+            {
+                "id": 100,
+                "Province": "AO"
+            }
+        ]
+    },
+    {
+        "RegionId": 20,
+        "Region": "Veneto",
+        "PROVINCES": [
+            {
+                "id": 101,
+                "Province": "BL"
+            },
+            {
+                "id": 102,
+                "Province": "PD"
+            },
+            {
+                "id": 103,
+                "Province": "RO"
+            },
+            {
+                "id": 104,
+                "Province": "TV"
+            },
+            {
+                "id": 105,
+                "Province": "VE"
+            },
+            {
+                "id": 106,
+                "Province": "VI"
+            },
+            {
+                "id": 107,
+                "Province": "VR"
+            }
+        ]
+    }
+]
